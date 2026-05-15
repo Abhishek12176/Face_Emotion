@@ -4,7 +4,6 @@ from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, RTCConfigurati
 import cv2
 import numpy as np
 import av
-#from tensorflow.keras.models import load_model
 import tensorflow as tf
 model = tf.keras.models.load_model("emotion_model.h5", compile=False)
 
