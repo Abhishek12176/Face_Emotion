@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 
 @st.cache_resource
 def load_emotion_model():
-    return load_model("emotion_model.h5")
+    return load_model("emotion_model.h5", compile=False)
 
 model = load_emotion_model()
 
