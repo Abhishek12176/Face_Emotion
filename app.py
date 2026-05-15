@@ -99,14 +99,14 @@ from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, RTCConfigurati
 import cv2
 import numpy as np
 import av
-import tf_keras  # Keras 2 legacy loader
+import tensorflow as tf  # Keras 2 legacy loader
 
 st.set_page_config(page_title="Emotion Detection", layout="centered")
 
 @st.cache_resource
 def load_emotion_model():
-    model = tf_keras.models.load_model("emotion_model.h5", compile=False)
-    return model
+    model = load_emotion_model()
+    return tf.keras.models.load_model("emotion_model.h5", compile=False)
 
 @st.cache_resource
 def load_face_detector():
