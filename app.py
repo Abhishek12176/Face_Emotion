@@ -5,11 +5,12 @@ import cv2
 import numpy as np
 import av
 import tensorflow as tf
-model = tf.keras.models.load_model("emotion_model.h5", compile=False)
+
 
 @st.cache_resource
 def load_emotion_model():
-    return load_model("emotion_model.h5", compile=False)
+    model = tf.keras.models.load_model("emotion_model.h5", compile=False)
+    return model
 
 model = load_emotion_model()
 
